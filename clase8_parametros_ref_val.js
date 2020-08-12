@@ -8,13 +8,20 @@ function cumple(persona) {
   persona.edad += 1
 }
 // Va incrementando el valor cada vez
- cumple(javier)
+cumple(javier)
 
-function cumple2(persona) {
+// Si pasamos edad como valor el objeto no se modifica
+function cumple2(edad) {
+  edad += 1
+}
+
+function cumple3(persona) {
   return {
-    ...persona,
+    ...persona, // aquí copiamos el objeto nombrado 'Spread Operator'
     edad: persona.edad + 1
   }
 }
 
-cumple2(javier)
+cumple3(javier)
+
+var JavierMasViejo = cumple3(javier)
